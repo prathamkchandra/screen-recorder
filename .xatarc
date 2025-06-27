@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Pratham-K-s-workspace-dfdp8k.eu-central-1.xata.sh/db/screencast",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
