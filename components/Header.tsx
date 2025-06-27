@@ -11,8 +11,7 @@ const Header = ({ subHeader, title, userImg }: SharedHeaderProps) => {
     
   return (
     <header className="header">
-                {/* <h1>All Videos</h1> */}
-
+             
       <section className="header-container">
         <div className="details">
           {userImg && (
