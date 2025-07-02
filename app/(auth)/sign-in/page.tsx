@@ -26,17 +26,19 @@ const page = () => {
             time!
           </p>
 
-          <button
-            onClick={handleSignIn}
-          >
-            <Image
-              src="/assets/icons/google.svg"
-              alt="Google Icon"
-              width={22}
-              height={22}
-            />
-            <span>Sign in with Google</span>
-          </button>
+            <button
+              type="button"
+              className="google-sign-in-btn transition-colors flex items-center gap-2 px-4 py-2 rounded hover:bg-[#f3f4f6] hover:shadow-md"
+              onClick={handleSignIn}
+            >
+              <Image
+                src="/assets/icons/google.svg"
+                alt="Google Icon"
+                width={22}
+                height={22}
+              />
+              <span>Sign in with Google</span>
+            </button>
         </section>
       </aside>
       <div className="overlay" />
