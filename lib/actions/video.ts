@@ -6,9 +6,9 @@ import { headers } from "next/headers";
 import { revalidatePath } from "next/cache";
 import { and, desc, eq, ilike, or, sql } from "drizzle-orm";
 import { auth } from "@/lib/auth";
-import {apiFetch, doesTitleMatch, getEnv, withErrorHandling} from "@/lib/utils";
+import {apiFetch, doesTitleMatch, getEnv,getOrderByClause, withErrorHandling} from "@/lib/utils";
 import { BUNNY } from "@/constants";
-// import aj, { fixedWindow, request } from "../arcjet";
+import aj, { fixedWindow, request } from "../arcjet";
 
 // Constants with full names
 const VIDEO_STREAM_BASE_URL = BUNNY.STREAM_BASE_URL;

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { auth } from "@/lib/auth";
-// import aj, { createMiddleware, detectBot, shield } from "./lib/arcjet";
+import aj, { createMiddleware, detectBot, shield } from "./lib/arcjet";
 
 export async function middleware(request: NextRequest) {
   const session = await auth.api.getSession({
@@ -14,20 +14,20 @@ export async function middleware(request: NextRequest) {
 
   return NextResponse.next();
 }
-// const validate = aj
-//   .withRule(
-//     shield({
-//       mode: "LIVE",
-//     })
-//   )
-//   .withRule(
-//     detectBot({
-//       mode: "LIVE",
-//       allow: ["CATEGORY:SEARCH_ENGINE", "G00G1E_CRAWLER"], // allow other bots if you want to.
-//     })
-//   );
+const validate = aj
+  .withRule(
+    shield({ 
+      mode: "LIVE",
+    })
+  )
+  .withRule(
+    detectBot({
+      mode: "LIVE",
+      allow: ["CATEGORY:SEARCH_ENGINE", "G00G1E_CRAWLER"], // allow other bots if you want to.
+    })
+  );
 
-// export default createMiddleware(validate);
+export default createMiddleware(validate);
 
 export const config = {
   matcher: ["/((?!api|_next/static|_next/image|favicon.ico|sign-in|assets).*)"],
