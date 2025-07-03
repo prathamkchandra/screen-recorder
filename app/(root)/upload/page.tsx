@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, FormEvent, ChangeEvent, useEffect } from "react";
-// import {
-//   getVideoUploadUrl,
-//   getThumbnailUploadUrl,
-//   saveVideoDetails,
-// } 
-// from "@/lib/actions/video";
+import {
+  getVideoUploadUrl,
+  getThumbnailUploadUrl,
+  saveVideoDetails,
+} 
+from "@/lib/actions/video";
 import { useRouter } from "next/navigation";
 // Update the import paths below to the actual locations of FileInput and FormField components
 import FileInput from "@/components/FileInput";

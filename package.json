@@ -11,12 +11,14 @@
   "dependencies": {
     "@xata.io/client": "^0.0.0-next.v93343b9646f57a1e5c51c35eccf0767c2bb80baa",
     "better-auth": "^1.2.10",
+    "clsx": "^2.1.1",
     "dotenv": "^16.6.0",
     "drizzle-orm": "^0.44.2",
     "next": "15.3.3",
     "pg": "^8.16.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
