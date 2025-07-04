@@ -6,7 +6,7 @@ import { headers } from "next/headers";
 import { revalidatePath } from "next/cache";
 import { and, desc, eq, ilike, or, sql } from "drizzle-orm";
 import { auth } from "@/lib/auth";
-import {apiFetch, doesTitleMatch, getEnv,getOrderByClause, withErrorHandling} from "@/lib/utils";
+import {apiFetch, doesTitleMatch, getEnv, getOrderByClause, withErrorHandling} from "@/lib/utils";
 import { BUNNY } from "@/constants";
 import aj, { fixedWindow, request } from "../arcjet";
 
@@ -283,3 +283,5 @@ export const deleteVideo = withErrorHandling(
     return {};
   }
 );
+
+// export default video;

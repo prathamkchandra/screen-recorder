@@ -1,12 +1,13 @@
-import  EmptyState  from "@/components/EmptyState";
+ import  EmptyState  from "@/components/EmptyState";
 import  Header  from "@/components/Header";
-import VideoCard from "@/components/VideoCard";
+ import VideoCard from "@/components/VideoCard";
 import { getAllVideos } from "@/lib/actions/video";
+import Pagination from "@/components/Pagination";
 
 const page = async ({ searchParams }: SearchParams) => {
   const { query, filter, page } = await searchParams;
 
-  const { videos } = await getAllVideos(
+  const { videos,pagination } = await getAllVideos(
     query,
     filter,
     Number(page) || 1
@@ -16,7 +17,7 @@ const page = async ({ searchParams }: SearchParams) => {
     <main className="wrapper page">
       <Header subHeader="Public Library" title="All Videos" />
 
-      {videos?.length > 1? (
+      {videos?.length > 0? (
         <section className="video-grid">
           {videos.map(({ video, user }) => (
             <VideoCard
@@ -42,14 +43,14 @@ const page = async ({ searchParams }: SearchParams) => {
         />
       )}
 
-      {/* {pagination?.totalPages > 1 && (
+      {pagination?.totalPages > 1 && (
         <Pagination
           currentPage={pagination.currentPage}
           totalPages={pagination.totalPages}
           queryString={query}
           filterString={filter}
         />
-      )} */}
+      )}
     </main>
   );
 };
