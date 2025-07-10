@@ -1,4 +1,5 @@
 ## <a name="tech-stack">⚙️ Tech Stack</a>
+
 - **[Arcjet](https://jsm.dev/snapcast-arcjet)** is a developer-first security platform that integrates bot protection, rate limiting, email validation, and attack protection into your application with minimal code. It offers customizable protection for forms, login pages, and API routes, supporting frameworks like Node.js, Next.js, Deno, Bun, Remix, SvelteKit, and NestJS.
 
 - **[Bunny.net](https://jsm.dev/snapcast-bunny)** is a developer-friendly video delivery platform offering global CDN, edge storage, adaptive streaming, and a customizable player. It simplifies video management with features like automatic encoding, token-based security, and real-time analytics. Ideal for seamless, secure, and scalable video streaming.
