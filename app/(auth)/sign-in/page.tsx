@@ -1,16 +1,19 @@
-'use client'
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { authClient } from '@/lib/auth-client'
-const page = () => {
-  const handleSignIn = async()=>{
-    return await authClient.signIn.social({provider:'google'})                 
-  }
-  return (
-     <main className="sign-in">
+"use client";
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { createAuthClient } from "better-auth/client";
+const authClient = createAuthClient();
 
-  <aside className="google-sign-in">
+const page = () => {
+  const handleSignIn = async () => {
+    return await authClient.signIn.social({
+      provider: "google",
+    });
+  };
+  return (
+    <main className="sign-in">
+      <aside className="google-sign-in">
         <section>
           <Link href="/">
             <Image
@@ -26,19 +29,19 @@ const page = () => {
             time!
           </p>
 
-            <button
-              type="button"
-              className="google-sign-in-btn transition-colors flex items-center gap-2 px-4 py-2 rounded hover:bg-[#f3f4f6] hover:shadow-md"
-              onClick={handleSignIn}
-            >
-              <Image
-                src="/assets/icons/google.svg"
-                alt="Google Icon"
-                width={22}
-                height={22}
-              />
-              <span>Sign in with Google</span>
-            </button>
+          <button
+            type="button"
+            className="google-sign-in-btn transition-colors flex items-center gap-2 px-4 py-2 rounded hover:bg-[#f3f4f6] hover:shadow-md"
+            onClick={handleSignIn}
+          >
+            <Image
+              src="/assets/icons/google.svg"
+              alt="Google Icon"
+              width={22}
+              height={22}
+            />
+            <span>Sign in with Google</span>
+          </button>
         </section>
       </aside>
       <div className="overlay" />
@@ -68,7 +71,8 @@ const page = () => {
               ))}
             </figure>
             <p>
-            ScreenCast makes screen recording easy, it&apos;s fast, smooth, and shareable in seconds
+              ScreenCast makes screen recording easy, it&apos;s fast, smooth,
+              and shareable in seconds
             </p>
             <article>
               <Image
@@ -87,13 +91,9 @@ const page = () => {
         </div>
         <p>© Screencast 2025</p>
       </aside>
+    </main>
+  );
+};
 
+export default page;
 
-
-
-
-      </main>
-  )
-}
-
-export default page
