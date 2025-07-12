@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export function middleware(request: NextRequest) {
-  const isLoggedIn = request.cookies.get("auth-token");
-  
+  const isLoggedIn = request.cookies.get("__Secure-better-auth.session_token");
+
   if (!isLoggedIn) {
     return NextResponse.redirect(new URL("/sign-in", request.url));
   }
